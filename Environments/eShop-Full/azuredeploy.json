@@ -1096,7 +1096,7 @@
         }
       },
       "dependsOn": [
-        "[resourceGroup()]"
+        "[subscriptionResourceId('Microsoft.Resources/resourceGroups', resourceGroup().name)]"
       ]
     }
   ],
