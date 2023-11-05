@@ -1127,11 +1127,11 @@
     },
     "AZURE_KEY_VAULT_ENDPOINT": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.endpoint.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, resourceGroup().name), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.endpoint.value]"
     },
     "AZURE_KEY_VAULT_NAME": {
       "type": "string",
-      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.name.value]"
+      "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, resourceGroup().name), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.name.value]"
     }
   }
 }
