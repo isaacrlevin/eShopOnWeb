@@ -40,6 +40,9 @@
       "apiVersion": "2018-11-01",
       "name": "[format('webApp-{0}', parameters('name'))]",
       "location": "eastus",
+      "tags": {
+        "azd-service-name": "web"
+      },
       "properties": {
         "name": "[format('webApp-{0}', parameters('name'))]",
         "siteConfig": {
