@@ -17,18 +17,3 @@ parameters:
     description: 'Location of Environment'
     type: string
     required: true
-  - id: principalId
-    name: Principal Id
-    description: 'Azure Principal ID'
-    type: string
-    required: true
-  - id: sqlAdminPassword
-    name: SQL Admin Password
-    description: 'SQL Admin Password'
-    type: string
-    required: true
-  - id: appUserPassword
-    name: App User Password
-    description: 'App User Password'
-    type: string
-    required: true

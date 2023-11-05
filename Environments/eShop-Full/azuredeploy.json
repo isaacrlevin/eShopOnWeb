@@ -62,18 +62,6 @@
       "metadata": {
         "description": "Id of the user or app to assign application roles"
       }
-    },
-    "sqlAdminPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "SQL Server administrator password"
-      }
-    },
-    "appUserPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Application user password"
-      }
     }
   },
   "variables": {
@@ -569,10 +557,10 @@
             "value": "[variables('tags')]"
           },
           "sqlAdminPassword": {
-            "value": "[parameters('sqlAdminPassword')]"
+            "value": "SuperSecretPassword123!"
           },
           "appUserPassword": {
-            "value": "[parameters('appUserPassword')]"
+            "value": "SuperSecretPassword123!"
           },
           "keyVaultName": {
             "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, if(not(empty(parameters('resourceGroupName'))), parameters('resourceGroupName'), format('{0}{1}', variables('abbrs').resourcesResourceGroups, parameters('environmentName')))), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.name.value]"
@@ -775,10 +763,10 @@
             "value": "[variables('tags')]"
           },
           "sqlAdminPassword": {
-            "value": "[parameters('sqlAdminPassword')]"
+            "value": "SuperSecretPassword123!"
           },
           "appUserPassword": {
-            "value": "[parameters('appUserPassword')]"
+            "value": "SuperSecretPassword123!"
           },
           "keyVaultName": {
             "value": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, if(not(empty(parameters('resourceGroupName'))), parameters('resourceGroupName'), format('{0}{1}', variables('abbrs').resourcesResourceGroups, parameters('environmentName')))), 'Microsoft.Resources/deployments', 'keyvault'), '2022-09-01').outputs.name.value]"
