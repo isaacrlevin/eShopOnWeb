@@ -26,7 +26,7 @@
     },
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[resourceGroup().name]"
     },
     "webServiceName": {
       "type": "string",
@@ -206,13 +206,7 @@
     }
   },
   "resources": [
-    {
-      "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2021-04-01",
-      "name": "[if(not(empty(parameters('resourceGroupName'))), parameters('resourceGroupName'), format('{0}{1}', variables('abbrs').resourcesResourceGroups, parameters('environmentName')))]",
-      "location": "[parameters('location')]",
-      "tags": "[variables('tags')]"
-    },
+
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
@@ -466,7 +460,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "api-keyvault-access",
-      "resourceGroup": "[if(not(empty(parameters('resourceGroupName'))), parameters('resourceGroupName'), format('{0}{1}', variables('abbrs').resourcesResourceGroups, parameters('environmentName')))]",
+      "resourceGroup": "[resourceGroup().name]",
       "properties": {
         "expressionEvaluationOptions": {
           "scope": "inner"
